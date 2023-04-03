@@ -46,10 +46,12 @@ const solutions = [
     icon: ArrowPathIcon,
   },
 ]
+
 const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ]
+
 const resources = [
   {
     name: 'Help Center',
@@ -71,13 +73,14 @@ const resources = [
   },
   { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
 ]
+
 const recentPosts = [
   { id: 1, name: 'Boost your conversion rate', href: '#' },
   { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
   { id: 3, name: 'Improve your customer experience', href: '#' },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -281,7 +284,7 @@ export default function Nav() {
         leaveTo="opacity-0 scale-95"
       >
         <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
-          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-gray-900">
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -292,7 +295,7 @@ export default function Nav() {
                   />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-900 dark:text-white">
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -304,10 +307,10 @@ export default function Nav() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
+                      className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
-                      <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                      <span className="ml-3 text-base font-medium text-gray-900 dark:text-white">{item.name}</span>
                     </a>
                   ))}
                 </nav>
@@ -315,18 +318,18 @@ export default function Nav() {
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700 dark:hover:text-white">
+                <a href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
                   Pricing
                 </a>
 
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700 dark:hover:text-white">
+                <a href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
                   Docs
                 </a>
                 {resources.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-base font-medium text-gray-900 hover:text-gray-700"
+                    className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
                     {item.name}
                   </a>
