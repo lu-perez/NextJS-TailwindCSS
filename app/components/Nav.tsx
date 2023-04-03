@@ -83,9 +83,9 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Popover className="relative bg-white dark:bg-gray-900">
+    <Popover className="relative bg-white dark:bg-gray-900 border-b-2">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex items-center justify-between border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Your Company</span>
@@ -152,7 +152,7 @@ export default function Nav() {
                               <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{item.description}</p>
+                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">{item.description}</p>
                               </div>
                             </a>
                           ))}
@@ -177,10 +177,10 @@ export default function Nav() {
               )}
             </Popover>
 
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Pricing
             </a>
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Docs
             </a>
 
@@ -225,7 +225,7 @@ export default function Nav() {
                               <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500 dark: text-gray-400">{item.description}</p>
+                                <p className="mt-1 text-sm text-gray-500 dark: text-gray-300">{item.description}</p>
                               </div>
                             </a>
                           ))}
@@ -236,7 +236,7 @@ export default function Nav() {
                             <ul role="list" className="mt-4 space-y-4">
                               {recentPosts.map((post) => (
                                 <li key={post.id} className="truncate text-base">
-                                  <a href={post.href} className="font-medium text-gray-900 hover:text-gray-70 dark:text-gray-700 dark:hover:text-white">
+                                  <a href={post.href} className="font-medium text-gray-900 hover:text-gray-70 dark:text-gray-400 dark:hover:text-white">
                                     {post.name}
                                   </a>
                                 </li>
@@ -258,7 +258,7 @@ export default function Nav() {
             </Popover>
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900 dark:hover:text-white">
+            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Sign in
             </a>
             <a
