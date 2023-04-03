@@ -117,14 +117,14 @@ export default function Nav() {
                   <Popover.Button
                     className={classNames(
                       open ? 'text-gray-900' : 'text-gray-500',
-                      'group inline-flex items-center rounded-md bg-white dark:bg-gray-900 text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-100 dark:hover:text-white'
+                      'p-1 group inline-flex items-center rounded-md bg-white dark:bg-gray-900 text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-white'
                     )}
                   >
                     <span>Solutions</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500 dark:text-gray-300 dark:hover:text-white'
+                        'ml-2 h-5 w-5 dark:text-gray-300'
                       )}
                       aria-hidden="true"
                     />
@@ -177,10 +177,10 @@ export default function Nav() {
               )}
             </Popover>
 
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Pricing
             </a>
-            <a href="#" className="text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <a href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Docs
             </a>
 
@@ -190,14 +190,14 @@ export default function Nav() {
                   <Popover.Button
                     className={classNames(
                       open ? 'text-gray-900' : 'text-gray-500',
-                      'group inline-flex items-center rounded-md bg-white dark:bg-gray-900 text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-100 dark:hover:text-white'
+                      'p-1 group inline-flex items-center rounded-md bg-white dark:bg-gray-900 text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-white'
                     )}
                   >
                     <span>More</span>
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
-                        'ml-2 h-5 w-5 group-hover:text-gray-500 dark:text-gray-300 dark:hover:text-white'
+                        'ml-2 h-5 w-5 dark:text-gray-300'
                       )}
                       aria-hidden="true"
                     />
