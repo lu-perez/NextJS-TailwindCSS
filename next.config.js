@@ -12,6 +12,6 @@ const nextConfig = {
     // before rendering them
     dangerouslyAllowSVG: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
