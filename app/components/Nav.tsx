@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react';
+import { Popover, Transition } from '@headlessui/react';
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -15,9 +15,9 @@ import {
   ShieldCheckIcon,
   Squares2X2Icon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
+} from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 
 const solutions = [
   {
@@ -32,10 +32,10 @@ const solutions = [
     href: '#',
     icon: CursorArrowRaysIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
+  { name: 'Security', description: 'Your customers data will be safe and secure.', href: '#', icon: ShieldCheckIcon },
   {
     name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
+    description: 'Connect with third-party tools that you\'re already using.',
     href: '#',
     icon: Squares2X2Icon,
   },
@@ -45,12 +45,12 @@ const solutions = [
     href: '#',
     icon: ArrowPathIcon,
   },
-]
+];
 
 const callsToAction = [
   { name: 'Watch Demo', href: '#', icon: PlayIcon },
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
+];
 
 const resources = [
   {
@@ -72,16 +72,16 @@ const resources = [
     icon: CalendarIcon,
   },
   { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
-]
+];
 
 const recentPosts = [
   { id: 1, name: 'Boost your conversion rate', href: '#' },
   { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
   { id: 3, name: 'Improve your customer experience', href: '#' },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Nav() {
@@ -218,7 +218,6 @@ export default function Nav() {
                     <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0 dark:bg-gray-800">
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
-                          
                           {resources.map((item) => (
                             <a
                               key={item.name}
@@ -288,10 +287,12 @@ export default function Nav() {
             <div className="px-5 pt-5 pb-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <img
+                  <Image
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company"
+                    width={20}
+                    height={20}
                   />
                 </div>
                 <div className="-mr-2">
@@ -354,5 +355,5 @@ export default function Nav() {
         </Popover.Panel>
       </Transition>
     </Popover>
-  )
+  );
 }

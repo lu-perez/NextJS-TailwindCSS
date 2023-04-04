@@ -1,4 +1,4 @@
-import './globals.css'
+import './globals.css';
 
 export default function RootLayout({ children }) {
   return (
@@ -8,9 +8,9 @@ export default function RootLayout({ children }) {
         {children}
       </body>
     </html>
-  )
+  );
 }
 
 function isDarkTheme(isDark: boolean) {
-  return isDark ? 'dark' : ''
+  return isDark ? 'dark' : '';
 }

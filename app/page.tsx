@@ -1,4 +1,6 @@
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+
+const obj = { asd: 123 };
 
 export default function Home() {
   return (
@@ -6,5 +8,5 @@ export default function Home() {
       <Nav />
       <main>Home</main>
     </>
-  )
+  );
 }
