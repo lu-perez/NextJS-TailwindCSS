@@ -1,6 +1,4 @@
-import Nav from './components/Nav';
-
-const obj = { asd: 123 };
+import Nav from './components/Nav/Nav';
 
 export default function Home() {
   return (
