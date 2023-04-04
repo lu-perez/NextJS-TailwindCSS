@@ -1,3 +1,4 @@
+import Nav from './components/Nav/Nav';
 import './globals.css';
 
 export default function RootLayout({ children }) {
@@ -5,6 +6,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={isDarkTheme(true)}>
       <head />
       <body className="dark:bg-gray-900 dark:text-white">
+        <Nav />
         {children}
       </body>
     </html>
