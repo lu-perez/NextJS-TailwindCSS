@@ -107,7 +107,6 @@ export default function Nav() {
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
               className={classNames(
-                open ? 'text-gray-900' : 'text-gray-500',
                 'group inline-flex items-center rounded-md bg-white dark:bg-gray-800 text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-100 dark:hover:text-white'
               )}
             >
