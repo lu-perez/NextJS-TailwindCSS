@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
   ArrowPathIcon,
@@ -86,6 +86,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Nav() {
+
   return (
     <Popover className="relative bg-white dark:bg-gray-900 border-b-2">
       <div className="mx-auto max-w-7xl px-6">
@@ -148,7 +149,8 @@ export default function Nav() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                           {solutions.map((item) => (
-                            <a
+                            <Popover.Button
+                              as={Link}
                               key={item.name}
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-70 dark:hover:bg-gray-700"
@@ -158,19 +160,20 @@ export default function Nav() {
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
                                 <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">{item.description}</p>
                               </div>
-                            </a>
+                            </Popover.Button>
                           ))}
                         </div>
                         <div className="space-y-6 bg-gray-50 dark:bg-gray-900 dark:text-white px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
                           {callsToAction.map((item) => (
                             <div key={item.name} className="flow-root">
-                              <a
+                              <Popover.Button
+                                as={Link}
                                 href={item.href}
                                 className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                               >
                                 <item.icon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true" />
                                 <span className="ml-3">{item.name}</span>
-                              </a>
+                              </Popover.Button>
                             </div>
                           ))}
                         </div>
@@ -181,12 +184,12 @@ export default function Nav() {
               )}
             </Popover>
 
-            <a href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <Link href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Pricing
-            </a>
-            <a href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            </Link>
+            <Link href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Docs
-            </a>
+            </Link>
 
             <Popover className="relative">
               {({ open }) => (
@@ -220,7 +223,8 @@ export default function Nav() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
-                            <Link
+                            <Popover.Button
+                              as={Link}
                               key={item.name}
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50 dark:hover:bg-gray-700"
@@ -230,7 +234,7 @@ export default function Nav() {
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
                                 <p className="mt-1 text-sm text-gray-500 dark: text-gray-300">{item.description}</p>
                               </div>
-                            </Link>
+                            </Popover.Button>
                           ))}
                         </div>
                         <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 dark:bg-gray-900 dark:text-white">
@@ -239,18 +243,26 @@ export default function Nav() {
                             <ul role="list" className="mt-4 space-y-4">
                               {recentPosts.map((post) => (
                                 <li key={post.id} className="truncate text-base">
-                                  <a href={post.href} className="font-medium text-gray-900 hover:text-gray-70 dark:text-gray-400 dark:hover:text-white">
+                                  <Popover.Button
+                                    as={Link}
+                                    href={post.href}
+                                    className="font-medium text-gray-900 hover:text-gray-70 dark:text-gray-400 dark:hover:text-white"
+                                  >
                                     {post.name}
-                                  </a>
+                                  </Popover.Button>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="mt-5 text-sm">
-                            <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                            <Popover.Button
+                              as={Link}
+                              href="#"
+                              className="font-medium text-indigo-600 hover:text-indigo-500"
+                            >
                               View all posts
                               <span aria-hidden="true"> &rarr;</span>
-                            </a>
+                            </Popover.Button>
                           </div>
                         </div>
                       </div>
@@ -261,15 +273,15 @@ export default function Nav() {
             </Popover>
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <Link href="#" className="whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Sign in
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Sign up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -306,49 +318,56 @@ export default function Nav() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {solutions.map((item) => (
-                    <a
+                    <Popover.Button
+                      as={Link}
                       key={item.name}
                       href={item.href}
                       className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
                       <span className="ml-3 text-base font-medium text-gray-900 dark:text-white">{item.name}</span>
-                    </a>
+                    </Popover.Button>
                   ))}
                 </nav>
               </div>
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <Link href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
                   Pricing
-                </a>
+                </Link>
 
-                <a href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <Link href="#" className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white">
                   Docs
-                </a>
+                </Link>
                 {resources.map((item) => (
-                  <a
+                  <Popover.Button
+                    as={Link}
                     key={item.name}
                     href={item.href}
                     className="text-base font-medium text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
                     {item.name}
-                  </a>
+                  </Popover.Button>
                 ))}
               </div>
               <div>
-                <a
+                <Popover.Button
+                  as={Link}
                   href="#"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
-                </a>
+                </Popover.Button>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 dark:text-indigo-600 hover:text-white dark:hover:text-white">
+                  <Popover.Button
+                    as={Link}
+                    href="#"
+                    className="text-indigo-600 dark:text-indigo-600 hover:text-white dark:hover:text-white"
+                  >
                     Sign in
-                  </a>
+                  </Popover.Button>
                 </p>
               </div>
             </div>
