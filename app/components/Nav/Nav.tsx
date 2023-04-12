@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const solutions = [
   {
@@ -68,7 +69,7 @@ const resources = [
   {
     name: 'Events',
     description: 'See what meet-ups and other events we might be planning near you.',
-    href: '#',
+    href: '/calendar',
     icon: CalendarIcon,
   },
   { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
@@ -90,7 +91,7 @@ export default function Nav() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex items-center justify-between border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <Link href="/">
               <span className="sr-only">Your Company</span>
               <Image
                 className="h-8 w-auto sm:h-10"
@@ -100,7 +101,7 @@ export default function Nav() {
                 height={20}
                 priority
               />
-            </a>
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button
@@ -219,7 +220,7 @@ export default function Nav() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white dark:bg-gray-800 px-5 py-6 sm:gap-8 sm:p-8">
                           {resources.map((item) => (
-                            <a
+                            <Link
                               key={item.name}
                               href={item.href}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50 dark:hover:bg-gray-700"
@@ -229,7 +230,7 @@ export default function Nav() {
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
                                 <p className="mt-1 text-sm text-gray-500 dark: text-gray-300">{item.description}</p>
                               </div>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                         <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8 dark:bg-gray-900 dark:text-white">

@@ -7,7 +7,9 @@ export default function RootLayout({ children }) {
       <head />
       <body className="dark:bg-gray-900 dark:text-white">
         <Nav />
-        {children}
+        <main className="h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );
