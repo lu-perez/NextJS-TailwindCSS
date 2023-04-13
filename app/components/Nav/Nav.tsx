@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import {
   ArrowPathIcon,
@@ -183,10 +183,10 @@ export default function Nav() {
               )}
             </Popover>
 
-            <Link href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <Link href="/products" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Pricing
             </Link>
-            <Link href="#" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <Link href="/" className="p-1 text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Docs
             </Link>
 
@@ -231,7 +231,7 @@ export default function Nav() {
                               <item.icon className="h-6 w-6 flex-shrink-0 text-indigo-600" aria-hidden="true" />
                               <div className="ml-4">
                                 <p className="text-base font-medium text-gray-900 dark:text-white">{item.name}</p>
-                                <p className="mt-1 text-sm text-gray-500 dark: text-gray-300">{item.description}</p>
+                                <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">{item.description}</p>
                               </div>
                             </Popover.Button>
                           ))}
