@@ -272,11 +272,13 @@ export default function Nav() {
             </Popover>
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <Link href="#" className="whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
+            <Link
+              href="/signin"
+              className="whitespace-nowrap text-base font-medium text-gray-400 hover:text-gray-900 dark:hover:text-white">
               Sign in
             </Link>
             <Link
-              href="#"
+              href="/signup"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
             >
               Sign up
@@ -353,7 +355,7 @@ export default function Nav() {
               <div>
                 <Popover.Button
                   as={Link}
-                  href="#"
+                  href="/signup"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                 >
                   Sign up
@@ -362,7 +364,7 @@ export default function Nav() {
                   Existing customer?{' '}
                   <Popover.Button
                     as={Link}
-                    href="#"
+                    href="/signin"
                     className="text-indigo-600 dark:text-indigo-600 hover:text-white dark:hover:text-white"
                   >
                     Sign in
